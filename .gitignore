@@ -1,3 +1,8 @@
 tf_user.csv
 terraform.tfstate
 terraform.tfstate.backup
+terraform.tfstate.lock.info
+id_rsa.pub
+id_rsa
+.terraform
+.terraform.lock.hcl

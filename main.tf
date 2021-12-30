@@ -17,7 +17,9 @@ provider "aws" {
 resource "aws_instance" "app_server" { 
   ami           = "ami-04505e74c0741db8d"
   instance_type = "t2.micro"
-  vpc_security_group_ids = ["sg-04dd23454a202ae1c"]
+  key_name = "id_rsa.pub"
+  vpc_security_group_ids = ["sg-0a0376b3dc7401154"]
+
   tags = {
     Name = "IAC"
   }
