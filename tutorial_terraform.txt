@@ -13,6 +13,7 @@ Para usar o terraform:
 - Para indentar de forma automática: terraform fmt
 - Para verificar security group criado via terraform via aws-cli execute o comando:
 aws ec2 describe-security-groups
+- Para visualizar informações como IP, redes, etc alocados na infraestrutura use o comando: terraform show
 
 Primeiros passos:
 
