@@ -11,6 +11,8 @@ Para usar o terraform:
 - Terceiro para executar o comando apply para aplicar as alterações no cloud provider: terraform apply 
 - O comando faz a verificação do código: terraform validate
 - Para indentar de forma automática: terraform fmt
+- Para verificar security group criado via terraform via aws-cli execute o comando:
+aws ec2 describe-security-groups
 
 Primeiros passos:
 
