@@ -1,0 +1,38 @@
+Para usar o terraform:
+
+- Instalar o Terraform
+- Instalar o AWS CLI
+- Criar Workdir
+- Instalar extensão VScode Terraform
+- Criar chave ssh no linux: ssh-keygen -t terraform-aws -t rsa
+- Importar chave ssh em EC2 > Key pairs
+- Primeiro executar o comando para criar binários: terraform init 
+- Segundo executar o comando para planejar e verificar o que será modificado: terraform plan
+- Terceiro para executar o comando apply para aplicar as alterações no cloud provider: terraform apply 
+- O comando faz a verificação do código: terraform validate
+- Para indentar de forma automática: terraform fmt
+
+Primeiros passos:
+
+- Criar main.tf
+- Inserir Cloud Provider
+
+# Configure the AWS Provider
+provider "aws" {
+    version = "~> 2.0"
+  region = "us-east-1"
+}
+ 
+
+- Criar recurso
+
+    # count = 3 Provisiona 3 instancias
+    ami = "ami-04505e74c0741db8d"
+    instance_type = "t2.micro"
+    key_name = "terraform-aws"
+    tags = {
+        Name = "1"
+        # Name = "dev${count.index}" cria nome sequencial
+    }
+}
+
