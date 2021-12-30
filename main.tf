@@ -18,10 +18,21 @@ resource "aws_instance" "app_server" {
   ami           = "ami-04505e74c0741db8d"
   instance_type = "t2.micro"
   key_name = "id_rsa.pub"
-  vpc_security_group_ids = ["sg-04bae8e16ff72b1f7"]
+  vpc_security_group_ids = ["${aws_security_group.allow_ssh.id}"]
+  depends_on = [aws_s3_bucket.dev]
 
   tags = {
-    Name = "IAC"
+    Name = "dev"
   }
 }
 
+
+
+resource "aws_s3_bucket" "dev" {
+  bucket = "dtechlabs-dev"
+  acl    = "private"
+
+  tags = {
+    Name = "dtechlabs-dev"
+  }
+}
