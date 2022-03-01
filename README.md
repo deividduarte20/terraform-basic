@@ -1,6 +1,6 @@
 # terraform
 
-#### Para executar a inicialização dos binários terraform:
+#### Para executar a inicialização com o terraform (prepara o diretório atual de trabalho para o uso do terraform):
 terraform init
 
 #### Para planejar e verificar os itens que serão provisionados:
