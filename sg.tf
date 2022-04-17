@@ -6,7 +6,7 @@ resource "aws_security_group" "allow_http" {
     from_port        = 80
     to_port          = 80
     protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0","168.181.130.130/32"]
+    cidr_blocks      = var.allow_ip
   }
 
   egress {
